@@ -18,7 +18,7 @@ const { chromium } = require('@playwright/test');
 const fs = require('fs');
 const path = require('path');
 
-const SPA_URL = 'https://team1-arch.dev.accela.com/apps/sengine/script-analyzer/clients/app/home';
+const SPA_URL = 'https://team1-arch.dev.accela.com/apps/engarch/script-analyzer/clients/app/home';
 const AUTH_STATE = path.join(__dirname, 'auth-state.json');
 const SESSION_STORE = path.join(__dirname, 'session-storage.json');
 const LOGIN_TIMEOUT_MS = 120_000; // 2 minutes

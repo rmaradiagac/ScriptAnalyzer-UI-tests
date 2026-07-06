@@ -22,7 +22,7 @@
  *      const browser = await chromium.launch({ headless: false });
  *      const context = await browser.newContext();
  *      const page = await context.newPage();
- *      await page.goto('https://team1-arch.dev.accela.com/apps/sengine/script-analyzer/clients/app/home');
+ *      await page.goto('https://team1-arch.dev.accela.com/apps/engarch/script-analyzer/clients/app/home');
  *      // Complete SSO login in the browser window, then press Enter here:
  *      await new Promise(r => setTimeout(r, 120_000)); // 2 min window
  *      await context.storageState({ path: 'auth-state.json' });
@@ -73,7 +73,7 @@ import * as os from 'os';
 // CONFIGURATION
 // ──────────────────────────────────────────────────────────────
 
-const BASE = 'https://team1-arch.dev.accela.com/apps/sengine/script-analyzer';
+const BASE = 'https://team1-arch.dev.accela.com/apps/engarch/script-analyzer';
 
 const URLS = {
   spaHome:         `${BASE}/clients/app/home`,
