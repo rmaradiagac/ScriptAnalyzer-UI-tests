@@ -73,7 +73,7 @@ import * as os from 'os';
 // CONFIGURATION
 // ──────────────────────────────────────────────────────────────
 
-const BASE = 'https://team1-arch.dev.accela.com/apps/engarch/script-analyzer';
+const BASE = 'https://standardtest-stg.accela.com/apps/stg/script-analyzer';
 
 const URLS = {
   spaHome:         `${BASE}/clients/app/home`,
@@ -198,9 +198,7 @@ test.describe('Authenticated tests — ADMIN role', () => {
   // ────────────────────────────────────────────────────────────
 
   test('RG-49 Authenticated ADMIN user accesses Swagger docs without re-login', async ({ page }) => {
-    // Swagger docs remain hosted under sengine regardless of which app env is under test
-    const SWAGGER_URL = 'https://team1-arch.dev.accela.com/apps/sengine/script-analyzer/clients/docs';
-    await page.goto(SWAGGER_URL);
+    await page.goto(URLS.swagger);
 
     // SSO session must carry through — no re-login prompt
     await expect(page).not.toHaveURL(new RegExp(SSO_HOST), { timeout: 20_000 });
