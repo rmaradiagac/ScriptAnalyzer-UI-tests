@@ -198,7 +198,9 @@ test.describe('Authenticated tests — ADMIN role', () => {
   // ────────────────────────────────────────────────────────────
 
   test('RG-49 Authenticated ADMIN user accesses Swagger docs without re-login', async ({ page }) => {
-    await page.goto(URLS.swagger);
+    // Swagger docs are hosted on sengine across all environments
+    const SWAGGER_URL = 'https://team1-arch.dev.accela.com/apps/sengine/script-analyzer/clients/docs';
+    await page.goto(SWAGGER_URL);
 
     // SSO session must carry through — no re-login prompt
     await expect(page).not.toHaveURL(new RegExp(SSO_HOST), { timeout: 20_000 });
